@@ -53,8 +53,8 @@ Result:
 # You may also see it in the format of `.yyo`, where yy = 22.  E.g, `.22o`
 
 # Use either of these commands.  The record type is `mdb`
-teqc -lei   mdb GNSS202235660778.m00 > out/GNSS202235660778.obs
-teqc -leica mdb GNSS202235660778.m00 > out/GNSS202235660778.obs
+teqc -lei   mdb GNSS202235660778.m00 > GNSS202235660778.obs
+teqc -leica mdb GNSS202235660778.m00 > GNSS202235660778.obs
 ```
 
 ```bash
@@ -96,7 +96,7 @@ teqc -help | grep dec
 >		`-O.dec[imate] interval[:offset]          modulo decimation of OBS epochs to interval time units (default in seconds),`
 
 ```bash
-teqc -O.dec 30 out/GNSS202235660778.obs > out/GNSS202235660778.30.obs
+teqc -O.dec 30 GNSS202235660778.obs > GNSS202235660778.30.obs
 ```
 
 #### Results
