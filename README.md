@@ -109,3 +109,70 @@ This reduces a *1 second* file from 32 MB to a *30 second* file down to 1.1 MB.
 -rw-r--r--  1 roblabs  staff   1.1M Jan  4 16:24 GNSS202235660778.30seconds.obs
 -rw-r--r--  1 roblabs  staff    32M Jan  4 16:16 GNSS202235660778.obs
 ```
+
+---
+
+### Decimate & GPS Only
+
+You can call `teqc` with multiple flags (or sometimes called switches).  This will be important if, for example, you want to convert with the following options:
+
+1.  Convert to RINEX
+2.  decimate down to 30 seconds
+3.  Only use _SVs_ from GPS.  That is, _filter out_ other constellations such as GLONASS, etc.
+
+First, we need to understand how to _filter out_ or remove from the RINEX the constellations that we don't want.
+
+Let's look at how the help information from the `teqc` executable is displayed.
+
+```
+teqc -help | grep use\ any
+```
+
+        -G                   don't use any GPS SVs
+        -R                   don't use any GLONASS SVs
+        -S                   don't use any SBAS SVs
+        -E                   don't use any Galileo SVs
+        -C                   don't use any Beidou SVs
+        -J                   don't use any QZSS SVs
+        -I                   don't use any IRNSS SVs
+
+
+The [Teqc Tutorial](https://www.unavco.org/software/data-processing/teqc/doc/UNAVCO_Teqc_Tutorial.pdf) from unavco.org has this documentation about excluding GLONASS(**R**), GALILEO(**E**), and SBAS(**S**), but leaving all GPS(G): 
+
+```bash
+# These flags can explicity used to remove some constellations.
+# See page 12 of the PDF documentation for details
+# -R                   don't use any GLONASS SVs
+# -S                   don't use any SBAS SVs
+# -E                   don't use any Galileo SVs
+teqc -R -E -S +obs + +nav +,+ -tbin 1d tbinoutput inputfiles
+```
+
+#### Command
+
+Now we can put together decmitate and save GPS only.
+
+```bash
+teqc -O.dec 30 -R -E -S -C -J GNSS202235660778.obs > GNSS202235660778.30.GPS.obs
+```
+
+#### Results
+
+* As we saw with just _decimate_, we reduced a 32 MB *1 second* file down to a *30 second* file at 1.1 MB.
+* Now with _decimate_ and _GPS Only_, we reduced a 32 MB file down to 423K.
+* You can review the comments in the RINEX file that shows which satellites were excluded.
+
+      Forced Modulo Decimation to 30 seconds                      COMMENT
+      teqc edited: all GLONASS satellites excluded                COMMENT
+      teqc edited: all SBAS satellites excluded                   COMMENT
+      teqc edited: all Galileo satellites excluded                COMMENT
+      teqc edited: all Beidou satellites excluded                 COMMENT
+      teqc edited: all QZSS satellites excluded                   COMMENT
+
+*Data on RINEX file sizes*
+
+```console
+-rw-r--r--  1 roblabs  staff    32M Jan  4 16:16 GNSS202235660778.obs
+-rw-r--r--  1 roblabs  staff   1.1M Jan  4 16:24 GNSS202235660778.30.obs
+-rw-r--r--  1 roblabs  staff   423K Jan 12 18:11 GNSS202235660778.30.GPS.obs
+```
