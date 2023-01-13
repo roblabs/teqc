@@ -219,6 +219,8 @@ teqc edited: all QZSS satellites excluded                   COMMENT
 
 ### `meta`
 
+You can use the metadata extraction options `+meta`.
+
 Interrogate the file native m00 file
 
 ```bash
@@ -231,7 +233,8 @@ Result:
 
 ---
 
-You can use the metadata extraction options `+meta`:
+Once you have decimate'd the file & filtered the SVs for *GPS Only*, you can use `+meta` to get a summary of the RINEX file.
+
 
 ```console
 teqc +meta GNSS202235660778.30.GPS.obs
