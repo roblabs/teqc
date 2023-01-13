@@ -1,21 +1,22 @@
 # TEQC
 
-> TEQC (**Translation, Editing and Quality Checking**) — is [UNAVCO]-designed and supported for a variety of GPS/GNSS pre-processing and quick post-processing tasks, including translation to RINEX or BINEX, time windowing, satellite filtering, metadata correction, dataset merging or splitting, and GPS/GNSS quality checking of the data including coarse point-positioning.
+> "TEQC (**Translation, Editing and Quality Checking**) — is [UNAVCO]-designed and supported for a variety of [GPS]/[GNSS] pre-processing and quick post-processing tasks, including translation to [RINEX] or BINEX, time windowing, satellite filtering, metadata correction, dataset merging or splitting, and GPS/GNSS quality checking of the data including coarse point-positioning."
 
-> "[Teqc] (pronouced "tek") is a simple yet powerful and unified approach to solving many pre-processing problems with GPS, GLONASS, Galileo, SBAS, Beidou, QZSS, and IRNSS data, especially in RINEX or BINEX format:"
+> "[Teqc] (pronouced "tek") is a simple yet powerful and unified approach to solving many pre-processing problems with [GPS], GLONASS, Galileo, SBAS, Beidou, QZSS, and IRNSS data, especially in [RINEX] or BINEX format:"
 
 ## Definitions
 
 The Teqc documenation has an excellent glossary of terms they use in the `teqc` software.  Of note for this blog post are:
 
+* decimate - "*modulo decimation of OBS epochs to # time units*"
 * [epoch] - "*a specific time instance, using the GPS time basis or the time basis from another constellation*"
 * [GPS] - "*'**G**lobal **P**ositioning **S**ystem'; a specific spaceborne radionavigation system financed and operated by the U.S. Department of Defense*"
-* [RINEX] - "*'**R**eceiver **In**dependent **Ex**change'; ASCII exchange representation of GNSS data and metadata*"
+* [RINEX] - "*'**R**eceiver **In**dependent **Ex**change'; ASCII exchange representation of [GNSS] data and metadata*"
 * [SV] - "*'**S**pace **V**ehicle', referring originally to a specific Navstar GPS satellite, but now used to refer to any one of the Navstar GPS, GLONASS, Beidou/Compass, Galileo, QZSS, IRNSS, or SBAS satellites*"
 
 ## Getting Started
 
-Download binaries for macOS, Linux, Windows and others from [Unavco.org](https://www.unavco.org/software/data-processing/teqc/teqc.html).  You can also find documentation at that site.
+Download binaries for macOS, Linux, Windows and others from the [Teqc](https://www.unavco.org/software/data-processing/teqc/teqc.html) site.  You can also find documentation & tutorials at that site.
 
 ```bash
 teqc -version
@@ -28,7 +29,7 @@ teqc -version
 
 ## Example
 
-### Example of converting Leica file in the `.m00` format.
+### Example of converting [Leica](https://leica-geosystems.com/en-us) file in the `.m00` format.
 
 #### `teqc` Help 
 
@@ -109,7 +110,7 @@ This reduces a *1 second* file from 32 MB to a *30 second* file down to 1.1 MB. 
 ```console
 ll -h *.obs
 
-# result of Linux command to determine file size, human readable
+# result of Linux listing of OBS files to determine file size, human readable
 -rw-r--r--  1 roblabs  staff   1.1M Jan  4 16:24 GNSS202235660778.30.obs
 -rw-r--r--  1 roblabs  staff    32M Jan  4 16:16 GNSS202235660778.obs
 
@@ -188,7 +189,7 @@ teqc -O.dec 30 -R -E -S -C -J GNSS202235660778.obs > GNSS202235660778.30.GPS.obs
 ```console
 ll -h *.obs
 
-# result of Linux command to determine file size, human readable
+# result of Linux listing of OBS files to determine file size, human readable
 -rw-r--r--  1 roblabs  staff    32M Jan  4 16:16 GNSS202235660778.obs
 -rw-r--r--  1 roblabs  staff   1.1M Jan  4 16:24 GNSS202235660778.30.obs
 -rw-r--r--  1 roblabs  staff   423K Jan 12 18:11 GNSS202235660778.30.GPS.obs
@@ -263,6 +264,7 @@ trans date & time:       2023-01-13 02:11:36.000
 ---
 
 [epoch]:  https://www.unavco.org/help/glossary/glossary.html#epoch
+[GNSS]:   https://www.unavco.org/help/glossary/glossary.html#GNSS
 [GPS]:    https://www.unavco.org/help/glossary/glossary.html#GPS
 [RINEX]:  https://www.unavco.org/help/glossary/glossary.html#RINEX
 [SV]:     https://www.unavco.org/help/glossary/glossary.html#SV
