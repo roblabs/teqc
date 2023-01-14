@@ -1,4 +1,5 @@
 url: "https://RobLabs.com/teqc"
 repository: roblabs/teqc
 
-theme: minima
+# theme: minima
+remote_theme: https://github.com/benbalter/retlab
