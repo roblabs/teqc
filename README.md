@@ -1,8 +1,8 @@
-# TEQC
-
 > "TEQC (**Translation, Editing and Quality Checking**) — is [UNAVCO]-designed and supported for a variety of [GPS]/[GNSS] pre-processing and quick post-processing tasks, including translation to [RINEX] or BINEX, time windowing, satellite filtering, metadata correction, dataset merging or splitting, and GPS/GNSS quality checking of the data including coarse point-positioning."
 
 > "[Teqc] (pronouced "tek") is a simple yet powerful and unified approach to solving many pre-processing problems with [GPS], GLONASS, Galileo, SBAS, Beidou, QZSS, and IRNSS data, especially in [RINEX] or BINEX format:"
+
+---
 
 ## Definitions
 
@@ -263,8 +263,6 @@ RINEX version:           2.11
 RINEX translator:        teqc  2019Feb25
 trans date & time:       2023-01-13 02:11:36.000
 ```
-
----
 
 [epoch]:  https://www.unavco.org/help/glossary/glossary.html#epoch
 [GNSS]:   https://www.unavco.org/help/glossary/glossary.html#GNSS
