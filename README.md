@@ -1,3 +1,5 @@
+![GitHub Repo stars](https://img.shields.io/github/stars/roblabs/teqc?label=Source&style=social) ° ![GitHub](https://img.shields.io/github/license/roblabs/teqc)
+
 > "TEQC (**Translation, Editing and Quality Checking**) — is [UNAVCO]-designed and supported for a variety of [GPS]/[GNSS] pre-processing and quick post-processing tasks, including translation to [RINEX] or BINEX, time windowing, satellite filtering, metadata correction, dataset merging or splitting, and GPS/GNSS quality checking of the data including coarse point-positioning."
 
 > "[Teqc] (pronouced "tek") is a simple yet powerful and unified approach to solving many pre-processing problems with [GPS], GLONASS, Galileo, SBAS, Beidou, QZSS, and IRNSS data, especially in [RINEX] or BINEX format:"
